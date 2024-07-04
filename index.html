@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Easy Cat Timer</title>
+        <link type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAAAAAAyv/pAMr/9QDK//UAyv/1AMr/9QDK//UAyv/1AMr/9QDK//UAyv/1AMr/9QDK//UAyv/1AMr/9QDK//UAyv/pAMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//IAyv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//IAyv/yAMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv/yAMr/8gDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr/9ADK//IAyv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDL//8Ay///AMr//wDK//YAyf/yAMz//wDS//8A0v//AMj//wDD//8Axv//AMr//wDL//8Ayv//AMb//wDL//8A0P//AM///wDL//8Ayf/TAM7/8gDE//8Ap///AKr//wzL//811///F8///wDE//8AyP//AML//wzY//8Fyv//AKL//wCs//8Ay///AMz/ngDQ//sAw///AI3//wCN///b8/////////z///9u3///BML//5Xp///k7ev/mND1/wB+//8Akv//AMf//wDP/2cAyf/zAMj//x7K///z9f///+3l/5mTkv////r//f///zDa////////roN4//HY0f/H6P//Cb7//wDK//8Ayv8jAMr/eQDG//8Qzv//6f/////+9P//39b////+/7vy//8Hwv//iOX//+/u7/////z/xvr//wTM//8AyP/dAMr/AADK/wAAy//tAMX//wPJ//9o4v//kvT//2Xf//8Gyf//AMT//wDD//8i2f//JdT//wDG//8AyP//AMv/mQDK/wAAyv8AAMr/XQDL//8Ax///AMH/8wDB/94Awf/cAMf/xwDM/6EAyv98AMb/WwDF/zIAyf9IAMv//wDK/2UAyv8AAMr/AADK/wAAyv/IAMr//wDK/x4Ayv8AAMr/AADK/wAAyv8AAMr/AADK/wAAyv8AAMr/AADK/0QAyv8XAMr/AADK/wAAyv8AAMr/HADK/2AAyv8AAMr/AADK/wAAyv8AAMr/AADK/wAAyv8AAMr/AADK/wAAyv8AAMr/AADK/wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAACAAQAAgAEAAMf5AADP/wAA//8AAA==" rel="icon">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div id="audios">
+            <audio class="buttonDown" src="./asset/ButtonDown.wav" preload="auto"></audio>
+            <audio class="buttonUp" src="./asset/ButtonUp.wav" preload="auto"></audio>
+            <audio class="addOrLessNumber" src="./asset/AddOrLessNumber.wav" preload="auto"></audio>
+            <audio class="catUp1" src="./asset/CatUp-01.wav" preload="auto"></audio>
+            <audio class="catUp2" src="./asset/CatUp-02.wav" preload="auto"></audio>
+            <audio class="catUp3" src="./asset/CatUp-03.wav" preload="auto"></audio>
+            <audio class="catDown1" src="./asset/CatDown-01.wav" preload="auto"></audio>
+            <audio class="catDown2" src="./asset/CatDown-02.wav" preload="auto"></audio>
+            <audio class="catDown3" src="./asset/CatDown-03.wav" preload="auto"></audio>
+            <audio class="complete" src="./asset/Complete.mp3" preload="auto"></audio>
+        </div>
+        <div id="background"></div>
+        <main id="main">
+            <!-- <div id="logo">
+                <div class="image"></div>
+            </div> -->
+            <div id="timerApp">
+                <div id="timingUi" class="ui">
+                    <div class="background">
+                        <div class="gray"></div>
+                        <div class="yellow"></div>
+                    </div>
+                    <div>
+                        <div class="clock">
+                            <p class="colonText">:</p> 
+                            <p class="minuteText">24</p>
+                            <p class="secondsText">00</p>
+                        </div>
+                        <div>
+                            <div class="minuteButtons">
+                                <button class="numberButton"></button>
+                                <button class="addButton"></button>
+                                <button class="lessButton"></button>
+                            </div>
+                            <div class="secondsButtons">
+                                <button class="numberButton"></button>
+                                <button class="addButton"></button>
+                                <button class="lessButton"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="start">
+                            <button class="button"></button>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                    <div class="changeClockInput">
+                        <button class="closeButton"></button>
+                        <div class="minute">
+                            <input class="input" type="text" maxlength="2" value="20"/>
+                        </div>
+                        <div class="seconds">
+                            <input class="input" type="text" maxlength="2" value="00"/>
+                        </div>
+                    </div>
+                </div>
+                <div id="countdownUi" class="ui">
+                    <div class="time">
+                        <p class="timeText">00:00</p>
+                    </div>
+                    <div class="timeIsUp">
+                        <div class="image"></div>
+                    </div>
+                    <div class="paused">
+                        <div class="background"></div>
+                        <div class="pausedImage"></div>
+                        <p class="timeText">00:00</p>
+                    </div>
+                    <div class="blackCat">
+                        <div class="cat">
+                            <div class="body"></div>
+                            <div class="mouth"></div>
+                            <div class="close"></div>
+                        </div>
+                        <div class="rope">
+                            <div class="line"></div>
+                            <div class="text">
+                                <div class="reset"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="yellowCat">
+                        <div class="cat">
+                            <div class="body"></div>
+                            <div class="mouth"></div>
+                            <div class="close"></div>
+                            <div class="hand"></div>
+                        </div>
+                        <div class="rope">
+                            <div class="line"></div>
+                            <div class="text">
+                                <div class="pause"></div>
+                                <div class="resume"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="settingUi" class="ui">
+                    <div>
+                        <div class="leftBackground"></div>
+                        <button class="closeButton"></button>
+                        <div class="bubbleBox"></div>
+                        <div class="roundedCorner"></div>
+                        <div class="rightBackground"></div>
+                    </div>
+                    <div>
+                        <div class="divideLine"></div>
+                        <div class="logo"></div>
+                        <div class="version"></div>
+                        <button class="githubButton" id="github-button"></button>
+                        <button class="staffButton" id="caiguang"></button>
+                        <button class="staffButton" id="xudawang"></button>
+                    </div>
+                    <div>
+                        <div class="staffPanel"></div>
+                    </div>
+                    <div>
+                        <div class="settingTitle"></div>
+                        <div class="volume">
+                            <div class="volumeSlider">
+                                <div class="background"></div>
+                                <div class="round"></div>
+                            </div>
+                            <div class="inputVolumeSlider">
+                                <input class="input" type="range" value="100" min="0" max="100" step="10"/>
+                            </div>
+                            <div class="volumeNumber">
+                                <div class="background"></div>
+                                <p class="number">100</p>
+                            </div>
+                        </div>
+                        <div class="language">
+                            <button class="currentLanguage">
+                                <div class="chinese"></div>
+                                <div class="english"></div>
+                            </button>
+                            <div class="chooseLanguage">
+                                <a class="chinese" href="../chinese/index.html" target="_blank"></a>
+                                <a class="english" href="../english/index.html" target="_blank"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="titleBarUi" class="ui">
+                    <button class="settingToggle"></button>
+                    <button class="minimumButton" id="minimumButton"></button>
+                    <button class="closeButton"></button>
+                </div>
+            </div>
+            <!-- <div id="navigationBar">
+                <a class="whatIsIt" href="./what-is-it/index.html" target="_blank">
+                    <div class="bubble"></div>
+                    <div class="rect"></div>
+                    <div class="text"></div>
+                </a>
+                <a class="download" href="./download/index.html" target="_blank">
+                    <div class="bubble"></div>
+                    <div class="rect"></div>
+                    <div class="text"></div>
+                </a>
+                <div class="other">
+                    <div class="bubble"></div>
+                    <div class="rect"></div>
+                    <div class="text"></div>
+                    <div class="language">
+                        <div class="box"></div>
+                        <div class="corner"></div>
+                        <a class="english" href="../english/index.html" target="_blank">English</a>
+                        <a class="chinese" href="../chinese/index.html" target="_blank">简体中文</a>
+                    </div>
+                </div>
+            </div> -->
+        </main>
+        <!-- <nav id="topMenu">
+            <div class="openButton">
+                <div class="image"></div>
+            </div>
+            <div class="menu">
+                <div class="buttons">
+                    <a class="logo" href="./index.html" target="_blank">
+                        <div class="image"></div>
+                    </a>
+                    <div class="version">
+                        <div class="rect"></div>
+                        <div class="corner"></div>
+                        <div class="text">v1.0</div>
+                    </div>
+                    <a class="whatIsIt" href="./what-is-it/index.html" target="_blank">
+                        <div class="text">这是什么?</div>
+                        <div class="line"></div>
+                    </a>
+                    <div class="language">
+                        <div class="text">语言</div>
+                        <div class="line"></div>
+                        <div class="choose">
+                            <div class="box"></div>
+                            <div class="corner"></div>
+                            <a class="english" href="../english/index.html" target="_blank">English</a>
+                            <a class="chinese" href="../chinese/index.html" target="_blank">简体中文</a>
+                        </div>
+                    </div>
+                    <div class="null"></div>
+                    <a class="download" href="./download/index.html" target="_blank">下载桌面版</a>
+                    <div class="close">
+                        <div class="image"></div>
+                    </div>
+                </div>
+            </div>
+        </nav> -->
+    </body>
+    <script src="./script.js"></script>
+</html>
